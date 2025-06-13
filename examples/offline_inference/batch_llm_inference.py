@@ -26,9 +26,9 @@ from ray.data.llm import build_llm_processor, vLLMEngineProcessorConfig
 assert Version(ray.__version__) >= Version("2.44.1"), (
     "Ray version must be at least 2.44.1"
 )
-
+print(f"Using Ray version: {ray.__version__}")
 # Uncomment to reduce clutter in stdout
-# ray.init(log_to_driver=False)
+ray.init(log_to_driver=False, num_cpus=4, num_gpus=0)
 # ray.data.DataContext.get_current().enable_progress_bars = False
 
 # Read one text file from S3. Ray Data supports reading multiple files
