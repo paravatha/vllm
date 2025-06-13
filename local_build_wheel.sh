@@ -9,8 +9,8 @@ fi
 
 # install the required packages
 uv pip install -r requirements/cpu.txt --index-strategy unsafe-best-match
-
 uv pip install build
+
 # Build the wheel
 python -m build --wheel
 
